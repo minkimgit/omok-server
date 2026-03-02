@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // 2. MongoDB 연결 설정
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://kmy12083:c7elYelcnPQnpSVH@omok14.gz1uewk.mongodb.net/?')
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log("[DB] MongoDB 연결 성공"))
     .catch(err => console.error("[DB] MongoDB 연결 실패:", err));
 
