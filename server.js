@@ -288,3 +288,10 @@ io.on('connection', (socket) => {
 server.listen(PORT, () => {
     console.log(`Socket.io 서버가 http://localhost:${PORT} 에서 작동 중`);
 });
+
+process.on('uncaughtException', (err) => {
+    console.error('[CRASH] 처리되지 않은 예외:', err);
+});
+process.on('unhandledRejection', (reason) => {
+    console.error('[CRASH] 처리되지 않은 Promise 거부:', reason);
+});
